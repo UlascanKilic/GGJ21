@@ -14,11 +14,23 @@ public class Spawner : MonoBehaviour
     private Vector3 targetPosition;
 
     private List<Transform> childPoints;
-    private List<int> forbiddenIndex;
+    
+    public List<int> forbiddenIndex;
+
+
+    [HideInInspector]
+    public List<string> collectibleNames;
     private int counter = 0;
     void Start()
     {
+        collectibleNames = new List<string>();
         childPoints = new List<Transform>();
+
+        foreach(GameObject child in collectibles)
+        {
+            collectibleNames.Add(child.name+"(Clone)");
+        }
+
         Spawn();
     }
 
