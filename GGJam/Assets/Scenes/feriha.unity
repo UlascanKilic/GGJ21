@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 348942952}
         m_MethodName: Home
         m_Mode: 1
         m_Arguments:
@@ -2300,6 +2300,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5f5adfe0e20bf3409adb454ed3e54b9, type: 3}
+--- !u!114 &348942952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8449151642600735350, guid: 7d8198e508cd33840b48dfabbb5e4aea,
+    type: 3}
+  m_PrefabInstance: {fileID: 201117332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9ea53e8d9686440885989fa9a34a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &369671501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5554,7 +5566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 348942952}
         m_MethodName: Replay
         m_Mode: 1
         m_Arguments:
@@ -9089,7 +9101,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 348942952}
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:

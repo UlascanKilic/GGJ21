@@ -10,6 +10,8 @@ public class WinLevel : MonoBehaviour
     [SerializeField]
     public Countdown countdown;
 
+    public int reachedLevel; 
+
     private bool winLevel;
     void Start()
     {
@@ -37,8 +39,15 @@ public class WinLevel : MonoBehaviour
         }
 
         Debug.Log("Level won!");
+        
         winLevel = true;
         wonCanvas.gameObject.SetActive(true);
+
+        reachedLevel = PlayerPrefs.GetInt("ReachedLevel",1);
+        reachedLevel++;
+        PlayerPrefs.SetInt("ReachedLevel",reachedLevel);
+
+        Debug.Log("unlocked level : " + reachedLevel);
         
     }
 }
