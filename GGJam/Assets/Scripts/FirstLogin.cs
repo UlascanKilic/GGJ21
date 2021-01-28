@@ -61,7 +61,7 @@ public class FirstLogin : MonoBehaviour
 		}
 
 		if(timer <= 0){
-			SceneManager.LoadScene("game1");
+			SceneManager.LoadScene("feriha");
 		}
 
     }
@@ -87,6 +87,7 @@ public class FirstLogin : MonoBehaviour
 		GetComponent<Animator>().enabled=true;
 		pbutton.SetActive(false);
 		animtrue = true;
+
 	}
 
 }

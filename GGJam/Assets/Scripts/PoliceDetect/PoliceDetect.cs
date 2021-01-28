@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PoliceDetect : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PoliceDetect : MonoBehaviour
     public float toleranceTime;
 
     private bool isInTrigger = false;
+	public GameObject manp;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -41,6 +44,7 @@ public class PoliceDetect : MonoBehaviour
         {
             countDown.minusPerSecond = minusAmount;
             countDown.countdownText.color = Color.red;
+//			transform.DORotateQuaternion();
         }
        
     }
