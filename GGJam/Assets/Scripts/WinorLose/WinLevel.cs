@@ -42,10 +42,8 @@ public class WinLevel : MonoBehaviour
         
         winLevel = true;
         wonCanvas.gameObject.SetActive(true);
-
-        reachedLevel = PlayerPrefs.GetInt("ReachedLevel",1);
-        reachedLevel++;
-        PlayerPrefs.SetInt("ReachedLevel",reachedLevel);
+            
+        PlayerPrefs.SetInt("ReachedLevel", reachedLevel);
 
         Debug.Log("unlocked level : " + reachedLevel);
         

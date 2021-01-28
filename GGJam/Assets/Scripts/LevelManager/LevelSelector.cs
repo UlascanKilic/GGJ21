@@ -17,11 +17,20 @@ public class LevelSelector : MonoBehaviour
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            levelButtons[i].interactable = false;
+            if (i + 1 > levelReached)
+            {
+                levelButtons[i].interactable = false;
+            }
+            
         }
     }
     public void Select(string levelName)
     {
-        SceneManager.LoadScene(int.Parse(levelName));      
+        SceneManager.LoadScene(int.Parse(levelName)+1);      
+    }
+    public void GetName()
+    {
+        string name = EventSystem.current.currentSelectedGameObject.name;
+        Select(name);
     }
 }
