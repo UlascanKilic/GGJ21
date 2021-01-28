@@ -8,8 +8,6 @@ public class PoliceDetect : MonoBehaviour
     [SerializeField]
     public Countdown countDown;
 
- 
-
     [SerializeField]
     public float minusAmount;
 
@@ -24,6 +22,8 @@ public class PoliceDetect : MonoBehaviour
     
     private Vector3 turnRight,turnLeft;
 
+	public Animator animator;
+
     private void Start()
     {
         turnRight = new Vector3();
@@ -35,7 +35,8 @@ public class PoliceDetect : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             isInTrigger = true;
-            StartCoroutine(EnterArea(toleranceTime));            
+            StartCoroutine(EnterArea(toleranceTime));
+			animator.SetBool("walkwalk", false);
         }
         
     }
@@ -46,7 +47,7 @@ public class PoliceDetect : MonoBehaviour
             isInTrigger = false;
             countDown.minusPerSecond = 1;
             countDown.countdownText.color = Color.white;
-
+			animator.SetBool("walkwalk", true);
         }
     }
 
