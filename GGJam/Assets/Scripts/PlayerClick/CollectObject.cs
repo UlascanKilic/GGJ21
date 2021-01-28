@@ -4,43 +4,105 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CollectObject : MonoBehaviour
 {
+    [SerializeField]
+    public float delay;
+
+    [SerializeField]
+    public Image holdImage;
+
     public Spawner spawner;
 
     public Transform panel;
 
+    private float timeLeft;
+    private bool is_clicking = true;
+    private bool trueLayer= false;
+
+    private GameObject canvas;
     // Update is called once per frame
+
+    private void Start()
+    {
+        canvas = GameObject.Find("Canvas");
+        timeLeft = delay;
+    }
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
-        {
+        {            
             string clickedObject;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
-            {
-                
-                clickedObject = hit.transform.gameObject.name;               
+            {              
+                clickedObject = hit.transform.gameObject.name;
+                Debug.Log(clickedObject);
                 if (spawner.collectibleNames.Contains(clickedObject))
                 {
-                    Debug.Log(clickedObject);
-                    Destroy(hit.transform.gameObject);
-
-                    foreach(Transform child in panel)
+                    trueLayer = true;
+                    if (Input.GetMouseButton(0))
                     {
-                        if (child.gameObject.name == clickedObject)
-                        {
-                            child.gameObject.active = false;
-                        }
-                    }
-                    
+                        FillOutBar();
+                        StartCoroutine(CollectItemWithDelay(delay, clickedObject,hit));
+                    }                                      
                 }
                 else
                 {
-                    Debug.Log("object");
+                    trueLayer = false;
+                    //Debug.Log("object");
+                }
+            }
+        }       
+    }
+    private void FixedUpdate()
+    {
+        if (Input.GetMouseButton(0) && holdImage.fillAmount != 0 && is_clicking)
+        {
+            holdImage.gameObject.SetActive(true);
+            FillOutBar();
+            if (holdImage.fillAmount == 0)
+            {
+                is_clicking = false;
+                holdImage.gameObject.SetActive(false);
+                holdImage.fillAmount = 1;
+            }
+
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            is_clicking = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            is_clicking = false;
+            holdImage.gameObject.SetActive(false);
+            holdImage.fillAmount = 1;
+        }
+
+    }
+    private void FillOutBar()
+    {      
+        holdImage.fillAmount -= 1.0f / delay * Time.deltaTime;           
+    }
+    IEnumerator CollectItemWithDelay(float delay,string clickedObject,RaycastHit hit)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (Input.GetMouseButton(0))
+        {         
+            Debug.Log(clickedObject);
+            Destroy(hit.transform.gameObject);
+
+            foreach (Transform child in panel)
+            {
+                if (child.gameObject.name == clickedObject)
+                {
+                    child.gameObject.active = false;
                 }
             }
         }
-       
+        
     }
 }
