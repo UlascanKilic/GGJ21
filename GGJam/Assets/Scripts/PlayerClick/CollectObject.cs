@@ -56,8 +56,8 @@ public class CollectObject : MonoBehaviour
                 {                
                     if (Input.GetMouseButton(0))
                     {
-                        targetPos = new Vector3(1f, hit.transform.position.y, hit.transform.position.z);
-
+                        targetPos = new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z);
+                        Debug.Log(collectibleCount);
                         is_clicking = true;
                         holdImage.gameObject.SetActive(true);
                         StartCoroutine(CollectItemWithDelay(delay, clickedObject));                       
@@ -68,8 +68,7 @@ public class CollectObject : MonoBehaviour
                     
                     if(hit.transform.gameObject.tag == "Obstacle")
                     {
-                        targetPos = new Vector3(1f, hit.transform.position.y, hit.transform.position.z);
-
+                        targetPos = new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z);
                         is_clicking = true;
                         holdImage.gameObject.SetActive(true);
                         StartCoroutine(CollectObstacle(hit.transform.gameObject.tag));
@@ -128,6 +127,7 @@ public class CollectObject : MonoBehaviour
                         {
                             child.gameObject.SetActive(false);
                             collectibleCount--;
+
                             if(collectibleCount == 0)
                             {
                                 winLevel.LevelWon();

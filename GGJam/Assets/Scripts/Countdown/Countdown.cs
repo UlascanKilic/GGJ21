@@ -14,8 +14,16 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     public LoseLevel lose;
 
+    [HideInInspector]
+    public float maxCount;
+
     public float minusPerSecond;
-    
+
+    private void Start()
+    {
+        maxCount = countdown;
+    }
+
     void Update()
     {
         if(Mathf.Round(countdown) > 0 && Mathf.Round(countdown) != 0)

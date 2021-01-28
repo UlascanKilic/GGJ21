@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8449151642600735353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8449151642600735359}
+  - component: {fileID: 8449151642600735358}
+  - component: {fileID: 8449151642600735356}
+  - component: {fileID: 8449151642600735357}
+  - component: {fileID: 8449151642600735346}
+  - component: {fileID: 8449151642600735347}
+  - component: {fileID: 8449151642600735345}
+  - component: {fileID: 8449151642600735344}
+  - component: {fileID: 8449151642600735350}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8449151642600735359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.126101, y: 5.9975038, z: -4.084678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8449151642600735358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167ceef00895d5c4b9f64d86533ba502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: {fileID: 0}
+  collectibles:
+  - {fileID: 8273946719126468383, guid: 0c5d17393b217b94dbc175c65673a12c, type: 3}
+  - {fileID: 8273946719126468383, guid: c1e97b5944cd1cf4b9a333f069021cd3, type: 3}
+  - {fileID: 8273946719126468383, guid: a595508139b5b0d4f91bb3e4a4fbdd68, type: 3}
+  objects:
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  - {fileID: 3528584305380855816, guid: 6fb0e7c77cb05424b8cb9a45a4b8bb64, type: 3}
+  forbiddenIndex: 
+  collectibleNames: []
+--- !u!114 &8449151642600735356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32015d69aaf7c94c9af2fcb18c5a268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
+  punishSecond: 5
+  countdown: {fileID: 8449151642600735346}
+  cameraShake: {fileID: 8449151642600735347}
+  collectibleParticle: {fileID: 4125363392959063259, guid: c14c77ba1fac9fb4eb657f4108bc6307,
+    type: 3}
+  obstacleParticle: {fileID: 6884377309281761288, guid: a885a2180d04f744e9596595450d60fd,
+    type: 3}
+  holdImage: {fileID: 0}
+  winLevel: {fileID: 8449151642600735345}
+  loseLevel: {fileID: 8449151642600735344}
+  spawner: {fileID: 8449151642600735358}
+  panel: {fileID: 0}
+  collectibleCount: 0
+--- !u!114 &8449151642600735357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffd9b0dbac42f941ae06ef9de2c28f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelfs: {fileID: 0}
+  camera: {fileID: 0}
+  shelfText: {fileID: 0}
+  offset: 7
+--- !u!114 &8449151642600735346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60be396eb1aeb044181d790352d9218e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 30
+  countdownText: {fileID: 0}
+  lose: {fileID: 8449151642600735344}
+  maxCount: 0
+  minusPerSecond: 1
+--- !u!114 &8449151642600735347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35563921201e8a843888a479db84f71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  duration: 10
+  strenght: 0.25
+  randomness: 5
+  offset: 1
+  vibRatio: 1
+  fadeOut: 1
+--- !u!114 &8449151642600735345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e028d2bbdb513b4098d1cfb61062eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wonCanvas: {fileID: 0}
+  countdown: {fileID: 8449151642600735346}
+--- !u!114 &8449151642600735344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06528ca0244bff4fbf8ac274169c2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseCanvas: {fileID: 0}
+  levelLose: 0
+--- !u!114 &8449151642600735350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449151642600735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9ea53e8d9686440885989fa9a34a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

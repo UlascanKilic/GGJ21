@@ -32,6 +32,7 @@ public class CameraMovement : MonoBehaviour
     {
         if(currentShelf != 1)
         {
+            Debug.Log("left");
             if (!camera.IsLerping())
             {
                 UpdateText(-1);
@@ -44,6 +45,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (currentShelf != shelfCount)
         {
+            Debug.Log("right");
             if (!camera.IsLerping())
             {
                 UpdateText(1);

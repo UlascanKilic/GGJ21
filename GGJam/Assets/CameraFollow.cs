@@ -21,10 +21,11 @@ public class CameraFollow : MonoBehaviour
     public void MoveCamera(float offset,float duration)
     {
         StartCoroutine(ChangeStatus());
-        Vector3 targetPoint = transform.position;
-        targetPoint.z += offset;
 
-        transform.DOLocalMoveZ(targetPoint.z, duration);
+        Vector3 targetPoint = transform.position;
+        targetPoint.x += offset;
+
+        transform.DOLocalMoveX(targetPoint.x, duration);
     }
     public bool IsLerping()
     {
