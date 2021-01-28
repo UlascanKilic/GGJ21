@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/game1.unity
+    path: Assets/Scenes/feriha.unity
     guid: a4c78993933097a409b365acdd60d71a
   m_configObjects: {}
