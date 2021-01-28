@@ -11,16 +11,8 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     public Text countdownText;
 
-    [SerializeField]
-    CameraShake cameraShake;
-
     public float minusPerSecond;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(Mathf.Round(countdown) != 0)
@@ -31,12 +23,12 @@ public class Countdown : MonoBehaviour
 
             if (countdown > 20)
             {
-                cameraShake.RemoveShake();
+                //
             }
 
             else if (countdown < 20)
             {
-                cameraShake.DoShake();
+                //
             }
         }
         else

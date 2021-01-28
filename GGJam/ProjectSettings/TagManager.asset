@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnPoint
   - Police
+  - Obstacle
   layers:
   - Default
   - TransparentFX

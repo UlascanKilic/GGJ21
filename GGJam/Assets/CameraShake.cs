@@ -21,4 +21,8 @@ public class CameraShake : MonoBehaviour
     {
         camera.DOShakeRotation(0, 0, 0, 0, false);
     }  
+    public void CustomizedShake(float duration,float strenght,int vibRatio, float randomness, bool fadeOut)
+    {
+        camera.DOShakeRotation(duration, strenght, vibRatio, randomness, fadeOut);
+    }
 }

@@ -4742,6 +4742,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
+  punishSecond: 5
+  countdown: {fileID: 1811498376}
+  cameraShake: {fileID: 1811498377}
+  collectibleParticle: {fileID: 4125363392959063259, guid: c14c77ba1fac9fb4eb657f4108bc6307,
+    type: 3}
+  obstacleParticle: {fileID: 6884377309281761288, guid: a885a2180d04f744e9596595450d60fd,
+    type: 3}
   holdImage: {fileID: 870737856}
   spawner: {fileID: 1811498372}
   panel: {fileID: 956975835}
@@ -4775,7 +4782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 30
   countdownText: {fileID: 264259625}
-  cameraShake: {fileID: 1811498377}
   minusPerSecond: 1
 --- !u!114 &1811498377
 MonoBehaviour:

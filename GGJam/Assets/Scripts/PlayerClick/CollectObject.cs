@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using LateExe;
 public class CollectObject : MonoBehaviour
 {
     [SerializeField]
-    public float delay;
+    public float delay,punishSecond;
+
+    [SerializeField]
+    public Countdown countdown;
+
+    [SerializeField]
+    public CameraShake cameraShake;
+
+    [SerializeField]
+    public ParticleSystem collectibleParticle, obstacleParticle;
 
     [SerializeField]
     public Image holdImage;
@@ -14,22 +24,14 @@ public class CollectObject : MonoBehaviour
 
     public Transform panel;
 
-    private float timeLeft;
-    private bool is_clicking = true;
-    private bool trueLayer= false;
-
-    private GameObject canvas;
-    // Update is called once per frame
-
-    private void Start()
-    {       
-        timeLeft = delay;
-    }
+    private Vector3 targetPos;
+    private bool is_clicking = false;
+ 
+    
     void Update()
-    {
-        
+    {      
         if (Input.GetMouseButtonDown(0))
-        {            
+        {           
             string clickedObject;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,49 +39,56 @@ public class CollectObject : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {              
                 clickedObject = hit.transform.gameObject.name;
-                Debug.Log(clickedObject);
+                //Debug.Log(clickedObject);
                 if (spawner.collectibleNames.Contains(clickedObject))
-                {
-                    trueLayer = true;
+                {                
                     if (Input.GetMouseButton(0))
                     {
-                        FillOutBar();
-                        StartCoroutine(CollectItemWithDelay(delay, clickedObject));
-                    }                                      
+                        targetPos = new Vector3(1f, hit.transform.position.y, hit.transform.position.z);
+
+                        is_clicking = true;
+                        holdImage.gameObject.SetActive(true);
+                        StartCoroutine(CollectItemWithDelay(delay, clickedObject));                       
+                    }                  
                 }
                 else
                 {
-                    trueLayer = false;
-                    //Debug.Log("object");
+                    
+                    if(hit.transform.gameObject.tag == "Obstacle")
+                    {
+                        targetPos = new Vector3(1f, hit.transform.position.y, hit.transform.position.z);
+
+                        is_clicking = true;
+                        holdImage.gameObject.SetActive(true);
+                        StartCoroutine(CollectObstacle(hit.transform.gameObject.tag));
+                    }
                 }
             }
-        }       
-    }
-    private void FixedUpdate()
-    {
-        if (Input.GetMouseButton(0) && holdImage.fillAmount != 0 && is_clicking)
-        {
-            holdImage.gameObject.SetActive(true);
-            FillOutBar();
-            if (holdImage.fillAmount == 0)
-            {
-                is_clicking = false;
-                holdImage.gameObject.SetActive(false);
-                holdImage.fillAmount = 1;
-            }
-
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            is_clicking = true;
-        }
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0))
         {
             is_clicking = false;
             holdImage.gameObject.SetActive(false);
-            holdImage.fillAmount = 1;
-        }
 
+            StopAllCoroutines();
+        }
+        
+    }
+    private void FixedUpdate()
+    {
+        if (is_clicking)
+        {
+            FillOutBar();
+        }       
+        else
+        {
+            holdImage.fillAmount = 1f;
+        }
+        if (holdImage.fillAmount == 0)
+        {
+            holdImage.gameObject.SetActive(false);
+
+        }
     }
     private void FillOutBar()
     {      
@@ -95,21 +104,50 @@ public class CollectObject : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (Physics.Raycast(ray, out hit))
-            {                
-                
+            {                               
                 if (hit.transform.gameObject.name == clickedObject)
-                
-                Destroy(hit.transform.gameObject);
-
-                foreach (Transform child in panel)
                 {
-                    if (child.gameObject.name == clickedObject)
+                    Instantiate(collectibleParticle, targetPos, Quaternion.identity);
+                    Destroy(hit.transform.gameObject);
+
+                    foreach (Transform child in panel)
                     {
-                        child.gameObject.SetActive(false);
+                        if (child.gameObject.name == clickedObject)
+                        {
+                            child.gameObject.SetActive(false);
+                            
+                        }
                     }
+                }                               
+            }           
+        }        
+    }
+    IEnumerator CollectObstacle(string clickedObject)
+    {
+        yield return new WaitForSeconds(delay);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Input.GetMouseButton(0))
+        {
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.gameObject.tag == clickedObject)
+                {
+                    
+                    countdown.countdown -= punishSecond;
+                    CameraEffects.ShakeOnce(0.8f,1);
+                    Instantiate(obstacleParticle, targetPos, Quaternion.identity);
+
+                    Debug.Log("Obstacle almaya calistin!");
+                   
                 }
             }
-            
-        }       
+        }
+
+    }
+    private void Collect(RaycastHit hit)
+    {
+        Destroy(hit.transform.gameObject);
     }
 }
