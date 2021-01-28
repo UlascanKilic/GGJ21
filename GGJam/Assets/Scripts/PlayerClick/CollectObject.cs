@@ -20,14 +20,26 @@ public class CollectObject : MonoBehaviour
     [SerializeField]
     public Image holdImage;
 
+    [SerializeField]
+    public WinLevel winLevel;
+
+    [SerializeField]
+    public LoseLevel loseLevel;
+
     public Spawner spawner;
 
     public Transform panel;
 
+    [HideInInspector]
+    public int collectibleCount;
     private Vector3 targetPos;
     private bool is_clicking = false;
- 
-    
+
+    private void Start()
+    {
+        collectibleCount = panel.childCount;
+    }
+
     void Update()
     {      
         if (Input.GetMouseButtonDown(0))
@@ -115,6 +127,11 @@ public class CollectObject : MonoBehaviour
                         if (child.gameObject.name == clickedObject)
                         {
                             child.gameObject.SetActive(false);
+                            collectibleCount--;
+                            if(collectibleCount == 0)
+                            {
+                                winLevel.LevelWon();
+                            }
                             
                         }
                     }

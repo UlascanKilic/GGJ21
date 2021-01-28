@@ -11,11 +11,14 @@ public class Countdown : MonoBehaviour
     [SerializeField]
     public Text countdownText;
 
+    [SerializeField]
+    public LoseLevel lose;
+
     public float minusPerSecond;
     
     void Update()
     {
-        if(Mathf.Round(countdown) != 0)
+        if(Mathf.Round(countdown) > 0 && Mathf.Round(countdown) != 0)
         {
 
             countdown -= minusPerSecond * Time.deltaTime;
@@ -34,8 +37,13 @@ public class Countdown : MonoBehaviour
         else
         {
             //öldün çıq
-        }
-       
-
+            if(lose.levelLose !=true)
+            {
+                countdown = 0;
+                lose.Lose();
+                minusPerSecond = 0;
+            }
+            
+        }     
     }
 }
