@@ -22,8 +22,7 @@ public class CollectObject : MonoBehaviour
     // Update is called once per frame
 
     private void Start()
-    {
-        canvas = GameObject.Find("Canvas");
+    {       
         timeLeft = delay;
     }
     void Update()
@@ -45,7 +44,7 @@ public class CollectObject : MonoBehaviour
                     if (Input.GetMouseButton(0))
                     {
                         FillOutBar();
-                        StartCoroutine(CollectItemWithDelay(delay, clickedObject,hit));
+                        StartCoroutine(CollectItemWithDelay(delay, clickedObject));
                     }                                      
                 }
                 else
@@ -86,23 +85,31 @@ public class CollectObject : MonoBehaviour
     {      
         holdImage.fillAmount -= 1.0f / delay * Time.deltaTime;           
     }
-    IEnumerator CollectItemWithDelay(float delay,string clickedObject,RaycastHit hit)
+    IEnumerator CollectItemWithDelay(float delay,string clickedObject)
     {
         yield return new WaitForSeconds(delay);
 
-        if (Input.GetMouseButton(0))
-        {         
-            Debug.Log(clickedObject);
-            Destroy(hit.transform.gameObject);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            foreach (Transform child in panel)
-            {
-                if (child.gameObject.name == clickedObject)
+        if (Input.GetMouseButton(0))
+        {
+            if (Physics.Raycast(ray, out hit))
+            {                
+                
+                if (hit.transform.gameObject.name == clickedObject)
+                
+                Destroy(hit.transform.gameObject);
+
+                foreach (Transform child in panel)
                 {
-                    child.gameObject.active = false;
+                    if (child.gameObject.name == clickedObject)
+                    {
+                        child.gameObject.SetActive(false);
+                    }
                 }
             }
-        }
-        
+            
+        }       
     }
 }
