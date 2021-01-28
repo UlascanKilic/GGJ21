@@ -8,14 +8,27 @@ public class PoliceDetect : MonoBehaviour
     [SerializeField]
     public Countdown countDown;
 
+ 
+
     [SerializeField]
     public float minusAmount;
 
     [SerializeField]
     public float toleranceTime;
 
+    [SerializeField]
+    public float duration;
+
     private bool isInTrigger = false;
 	public GameObject manp;
+    
+    private Vector3 turnRight,turnLeft;
+
+    private void Start()
+    {
+        turnRight = new Vector3();
+        turnLeft = new Vector3();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -44,8 +57,10 @@ public class PoliceDetect : MonoBehaviour
         {
             countDown.minusPerSecond = minusAmount;
             countDown.countdownText.color = Color.red;
-//			transform.DORotateQuaternion();
+            Debug.Log("trigger");
+
         }
-       
+        
+
     }
 }

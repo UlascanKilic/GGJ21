@@ -26,6 +26,8 @@ public class CameraFollow : MonoBehaviour
         targetPoint.x += offset;
 
         transform.DOLocalMoveX(targetPoint.x, duration);
+
+       
     }
     public bool IsLerping()
     {

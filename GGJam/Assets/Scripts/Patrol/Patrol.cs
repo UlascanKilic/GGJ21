@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class Patrol : MonoBehaviour
 {
+   
+
     public List<GameObject> patrolPoints;
 
     public float patrolTime;
@@ -22,7 +24,7 @@ public class Patrol : MonoBehaviour
     void FixedUpdate()
     {
         if (shouldLerp)
-        {
+        {          
             int random = Random.Range(0, patrolPoints.Count);
 
             if (previousPatrolIndex != random)
