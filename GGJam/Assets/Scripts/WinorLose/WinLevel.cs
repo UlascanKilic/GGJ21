@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class WinLevel : MonoBehaviour
 {
     [SerializeField]
     public Canvas wonCanvas;
+
+    [SerializeField]
+    public Image[] starList;
 
     [SerializeField]
     public Countdown countdown;
@@ -40,14 +44,23 @@ public class WinLevel : MonoBehaviour
         if (countdown.countdown >= yetmis)
         {
             Debug.Log("3 yildiz");
+            starList[0].color = Color.green;
+            starList[1].color = Color.green;
+            starList[2].color = Color.green;
         }
         if(countdown.countdown > kirk && countdown.countdown< yetmis)
         {
             Debug.Log("2 yildiz");
+            starList[0].color = Color.green;
+            starList[1].color = Color.green;
+            starList[2].color = Color.red;
         }
         if (countdown.countdown < kirk)
         {
             Debug.Log("1 yildiz");
+            starList[0].color = Color.green;
+            starList[1].color = Color.red;
+            starList[2].color = Color.red;
         }
 
         Debug.Log("Level won!");
