@@ -201,8 +201,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210052217944669548}
+  - component: {fileID: 2528923860715300978}
   m_Layer: 0
-  m_Name: Tractor 1
+  m_Name: Tractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,6 +228,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2528923860715300978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215582972302039674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5620834, z: 3.3563614}
+  m_Center: {x: -1.1533121e-17, y: 0.7034645, z: 0.025999546}
 --- !u!1 &1215746625451607856
 GameObject:
   m_ObjectHideFlags: 0

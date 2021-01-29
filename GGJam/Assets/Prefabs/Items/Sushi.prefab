@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2951226835296108490}
   - component: {fileID: 2944887226332076638}
   - component: {fileID: 2912625992476909992}
+  - component: {fileID: -6467876595203010793}
   m_Layer: 0
-  m_Name: Sushi 1
+  m_Name: Sushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12398258, y: 0.050161634, z: 0.14934927}
   m_Center: {x: -0.0029296875, y: 0.024865752, z: -0.006414555}
+--- !u!65 &-6467876595203010793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921259457470498464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12398261, y: 0.050161634, z: 0.1493493}
+  m_Center: {x: -0.0029296882, y: 0.024865752, z: -0.0064145564}

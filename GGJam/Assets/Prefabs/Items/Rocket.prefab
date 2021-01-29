@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4527938707332701720}
   - component: {fileID: 4535666865622870036}
   - component: {fileID: 4487465523705623462}
+  - component: {fileID: -6636687080472500055}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -96,3 +97,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dcfd569f3ff9a492592f70261deb6615, type: 3}
+--- !u!65 &-6636687080472500055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514424263718841756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.276437, y: 7.513742, z: 10.276435}
+  m_Center: {x: 0, y: 3.7196271, z: 0.0000011920928}

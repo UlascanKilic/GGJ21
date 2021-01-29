@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1244714740696572741}
   - component: {fileID: 1252728860955998181}
   - component: {fileID: 1283666135985471109}
+  - component: {fileID: 5255061675804187570}
   m_Layer: 0
-  m_Name: Lifebuoy 1
+  m_Name: Lifebuoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,3 +96,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 9f0f331b0ef336c4b8a5ef07d9431d42, type: 3}
+--- !u!65 &5255061675804187570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238680805690489179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7910518, y: 0.17958824, z: 0.7910522}
+  m_Center: {x: 0, y: 0, z: 0}

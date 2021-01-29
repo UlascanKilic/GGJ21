@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoseLevel : MonoBehaviour
 {
     [SerializeField]
-    public Canvas loseCanvas;
+    public Transform loseCanvas;
 
     public bool levelLose;
     void Start()

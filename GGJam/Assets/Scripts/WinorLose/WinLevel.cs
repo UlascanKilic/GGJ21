@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WinLevel : MonoBehaviour
 {
     [SerializeField]
-    public Canvas wonCanvas;
+    public Transform wonCanvas;
 
     [SerializeField]
     public Image[] starList;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4542203948352203484}
   - component: {fileID: 4566856514464191210}
   - component: {fileID: 4560595958068278128}
+  - component: {fileID: 3008646781256772732}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3008646781256772732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547602446365251006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78005075, y: 0.16778353, z: 0.14611897}
+  m_Center: {x: 0.00002363324, y: 0.001643233, z: 0.002169121}

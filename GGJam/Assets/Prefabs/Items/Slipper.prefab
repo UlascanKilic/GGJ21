@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3237376101058832413}
   - component: {fileID: 3212879371002627863}
   - component: {fileID: 3220913721534662425}
+  - component: {fileID: 776773196660572490}
   m_Layer: 0
-  m_Name: Slipper 1
+  m_Name: Slipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &776773196660572490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3233795727366634171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28391883, y: 0.043286413, z: 0.33160925}
+  m_Center: {x: 0, y: 0.019839495, z: -0.002023258}

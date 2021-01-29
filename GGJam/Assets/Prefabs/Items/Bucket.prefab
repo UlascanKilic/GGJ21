@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1854470062784137262}
   - component: {fileID: 1846392322682152736}
   - component: {fileID: 1814753791822142998}
+  - component: {fileID: 5560028249090031426}
   m_Layer: 0
-  m_Name: sand-bucket
+  m_Name: Bucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,3 +96,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3d4770f82ee5d493b82f92b980b683d6, type: 3}
+--- !u!65 &5560028249090031426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859690847088087440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28973356, y: 0.23247245, z: 0.26040825}
+  m_Center: {x: -0.018671138, y: 0.116236225, z: 0}

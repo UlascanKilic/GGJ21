@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 430275286056798727}
   - component: {fileID: 422524540285580377}
   - component: {fileID: 390163587400111349}
+  - component: {fileID: 5036910675037496173}
   m_Layer: 0
   m_Name: Kette
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 519c50d5f9968407fb0019e9f3ab555c, type: 3}
+--- !u!65 &5036910675037496173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400219407299719291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.97766495, y: 0.9021327, z: 0.97766495}
+  m_Center: {x: 0, y: 0.35613808, z: 0}

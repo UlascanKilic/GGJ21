@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8855361616674609809}
+  - component: {fileID: 4096740820360563052}
   m_Layer: 0
-  m_Name: Van 1
+  m_Name: Van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &4096740820360563052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856654143284600021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5687143, y: 1.9941384, z: 4.23297}
+  m_Center: {x: -0.031296372, y: 1.1491174, z: 0.08525576}
 --- !u!1 &8856689154184945997
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3182189182049536529}
   - component: {fileID: 3214589724350396981}
   m_Layer: 0
-  m_Name: Statue 1
+  m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,5 +91,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.81830686, y: 3.186406, z: 0.73556054}
-  m_Center: {x: 0, y: 1.591297, z: 0.07976149}
+  m_Size: {x: 1.6020893, y: 7.6327014, z: 1.6105366}
+  m_Center: {x: -0.060641423, y: 2.3541968, z: 0.020565987}

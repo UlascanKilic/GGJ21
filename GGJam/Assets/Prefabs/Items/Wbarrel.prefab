@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6746442396290099061}
   - component: {fileID: 6746442396291117873}
   - component: {fileID: 6720894106821451739}
+  - component: {fileID: -1410026170611550450}
   m_Layer: 0
   m_Name: Wbarrel
   m_TagString: Untagged
@@ -95,3 +96,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: d3fe446af3c13864995931e40d4b9ca4, type: 3}
+--- !u!65 &-1410026170611550450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746442396293147049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.90100217, y: 1.2595363, z: 0.8893974}
+  m_Center: {x: 0.0032229573, y: 0.62976813, z: 0.0022565275}

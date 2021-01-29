@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7994790227570887091}
   - component: {fileID: 7986341805167684333}
   - component: {fileID: 7954985339634492799}
+  - component: {fileID: 3923869869452457893}
   m_Layer: 0
   m_Name: Ak
   m_TagString: Untagged
@@ -95,3 +96,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: cf7810a6b6dfd8245899010fa059d0c3, type: 3}
+--- !u!65 &3923869869452457893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962449144655961875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039936982, y: 0.25189292, z: 0.86216515}
+  m_Center: {x: -0.0000000093132275, y: -0.07616306, z: 0.004695491}

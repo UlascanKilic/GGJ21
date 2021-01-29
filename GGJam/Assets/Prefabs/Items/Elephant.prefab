@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7716995540877714014}
   - component: {fileID: 7094319564459501724}
   - component: {fileID: 6031302258206047624}
+  - component: {fileID: 8704998889010141570}
   m_Layer: 0
   m_Name: Elephant
   m_TagString: Untagged
@@ -96,3 +97,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: cdf41627a7890bb4999c353e3e00d913, type: 3}
+--- !u!65 &8704998889010141570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255288244202331048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9551308, y: 3.8499794, z: 6.193346}
+  m_Center: {x: -0.0000001192093, y: 1.9101903, z: 1.0104927}
