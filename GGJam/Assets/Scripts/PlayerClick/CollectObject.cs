@@ -43,7 +43,8 @@ public class CollectObject : MonoBehaviour
     void Update()
     {      
         if (Input.GetMouseButtonDown(0))
-        {           
+        {
+            Debug.Log("asdadas");
             string clickedObject;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -65,8 +66,8 @@ public class CollectObject : MonoBehaviour
                 }
                 else
                 {
-                    
-                    if(hit.transform.gameObject.tag == "Obstacle")
+
+                    if (spawner.obstacleNames.Contains(clickedObject))
                     {
                         targetPos = new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z);
                         is_clicking = true;

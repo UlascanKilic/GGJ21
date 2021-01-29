@@ -20,15 +20,22 @@ public class Spawner : MonoBehaviour
 
     [HideInInspector]
     public List<string> collectibleNames;
+    public List<string> obstacleNames;
     private int counter = 0;
     void Start()
     {
+        obstacleNames = new List<string>();
         collectibleNames = new List<string>();
+
         childPoints = new List<Transform>();
 
         foreach(GameObject child in collectibles)
         {
             collectibleNames.Add(child.name+"(Clone)");
+        }
+        foreach (GameObject child in objects)
+        {
+            obstacleNames.Add(child.name + "(Clone)");
         }
 
         Spawn();
