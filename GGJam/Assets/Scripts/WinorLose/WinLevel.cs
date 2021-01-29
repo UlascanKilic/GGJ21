@@ -18,7 +18,7 @@ public class WinLevel : MonoBehaviour
 
     public int nextSceneLoad;
 
-    private bool winLevel;
+    public bool winLevel;
     void Start()
     {
         winLevel = false;

@@ -44,7 +44,7 @@ public class CollectObject : MonoBehaviour
     {      
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("asdadas");
+
             string clickedObject;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -131,6 +131,7 @@ public class CollectObject : MonoBehaviour
 
                             if(collectibleCount == 0)
                             {
+                                countdown.minusPerSecond = 0;
                                 winLevel.LevelWon();
                             }
                             

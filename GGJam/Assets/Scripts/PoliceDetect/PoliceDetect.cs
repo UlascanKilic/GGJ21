@@ -9,6 +9,9 @@ public class PoliceDetect : MonoBehaviour
     public Countdown countDown;
 
     [SerializeField]
+    public WinLevel winlvl;
+
+    [SerializeField]
     public float minusAmount;
 
     [SerializeField]
@@ -32,23 +35,31 @@ public class PoliceDetect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(winlvl.winLevel == false)
         {
-            isInTrigger = true;
-            StartCoroutine(EnterArea(toleranceTime));
-			animator.SetBool("walkwalk", false);
+            if (other.gameObject.tag == "Player")
+            {
+                isInTrigger = true;
+                StartCoroutine(EnterArea(toleranceTime));
+                animator.SetBool("walkwalk", false);
+            }
         }
+       
         
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(winlvl.winLevel == false)
         {
-            isInTrigger = false;
-            countDown.minusPerSecond = 1;
-            countDown.countdownText.color = Color.white;
-			animator.SetBool("walkwalk", true);
+            if (other.gameObject.tag == "Player")
+            {
+                isInTrigger = false;
+                countDown.minusPerSecond = 1;
+                countDown.countdownText.color = Color.white;
+                animator.SetBool("walkwalk", true);
+            }
         }
+        
     }
 
     IEnumerator EnterArea(float toleranceTime)
