@@ -8,25 +8,25 @@ using UnityEngine.EventSystems;
 public class LevelSelector : MonoBehaviour
 {
 
-    public Button[] levelButtons;
+    public Button[] lvlButtons;
 
-    private void Start()
-    {
+    public int dnm;
 
-       int levelReached = PlayerPrefs.GetInt("ReachedLevel",1);
+    // Start is called before the first frame update
+    void Start()
+    {      
+        int levelAt = PlayerPrefs.GetInt("levelAt", 1); /* < Change this int value to whatever your
+                                                             level selection build index is on your                                                          build settings */
 
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 0; i < lvlButtons.Length; i++)
         {
-            if (i + 1 > levelReached)
-            {
-                levelButtons[i].interactable = false;
-            }
-            
+            if (i + 1 > levelAt)
+                lvlButtons[i].interactable = false;
         }
     }
     public void Select(string levelName)
     {
-        SceneManager.LoadScene(int.Parse(levelName)+1);      
+        SceneManager.LoadScene(int.Parse(levelName));      
     }
     public void GetName()
     {
