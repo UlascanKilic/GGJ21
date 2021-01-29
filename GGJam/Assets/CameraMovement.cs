@@ -26,6 +26,7 @@ public class CameraMovement : MonoBehaviour
     {
         currentShelf = 1;
         shelfCount = shelfs.childCount;
+        UpdateText(0);
     }
 
     public void LeftClick()

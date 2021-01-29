@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
         {
             random = Random.Range(0, childPoints.Count);
             targetPosition = childPoints[random].transform.position;
-            Instantiate(collectibles[i], targetPosition, Quaternion.identity);
+            Instantiate(collectibles[i], targetPosition, collectibles[i].transform.rotation);
             childPoints.RemoveAt(random);
         }
 
@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
         {
             random = Random.Range(0, childPoints.Count);
             targetPosition = childPoints[random].transform.position;
-            Instantiate(objects[i], targetPosition, Quaternion.identity);
+            Instantiate(objects[i], targetPosition, objects[i].transform.rotation);
             childPoints.RemoveAt(random);
         }   
     }
