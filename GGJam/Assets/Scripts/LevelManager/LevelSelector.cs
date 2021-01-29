@@ -27,6 +27,10 @@ public class LevelSelector : MonoBehaviour
         {
             if (i + 1 > levelAt)
                 lvlButtons[i].interactable = false;
+            if (i + 1 == 13)
+            {
+                lvlButtons[i].interactable = false;
+            }
         }
     }
     public void Select(string levelName)
