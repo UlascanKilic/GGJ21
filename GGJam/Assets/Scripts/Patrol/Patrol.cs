@@ -9,20 +9,21 @@ public class Patrol : MonoBehaviour
     public List<GameObject> patrolPoints;
 
     public float patrolTime;
-    public float walkTime;
+    
     public float speed;
 
     private Vector3 targetPoint;
     private Collider targetCollider;
     private int previousPatrolIndex = -1;
 
+   
     private bool shouldLerp = false;
     void Start()
     {      
         StartCoroutine(ChangeStatus(patrolTime));
     }
     void FixedUpdate()
-    {
+    {       
         if (shouldLerp)
         {          
             int random = Random.Range(0, patrolPoints.Count);
