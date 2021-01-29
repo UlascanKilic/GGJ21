@@ -12,6 +12,9 @@ public class CollectObject : MonoBehaviour
     public Countdown countdown;
 
     [SerializeField]
+    public GameObject soundManager;
+
+    [SerializeField]
     public CameraShake cameraShake;
 
     [SerializeField]
@@ -38,6 +41,7 @@ public class CollectObject : MonoBehaviour
     private void Start()
     {
         collectibleCount = panel.childCount;
+        soundManager = GameObject.Find("SoundController");
     }
 
     void Update()
@@ -120,6 +124,7 @@ public class CollectObject : MonoBehaviour
                 if (hit.transform.gameObject.name == clickedObject)
                 {
                     Instantiate(collectibleParticle, targetPos, Quaternion.identity);
+                    soundManager.transform.GetChild(5).GetComponent<AudioSource>().Play();
                     Destroy(hit.transform.gameObject);
 
                     foreach (Transform child in panel)
@@ -156,6 +161,7 @@ public class CollectObject : MonoBehaviour
                     
                     countdown.countdown -= punishSecond;
                     CameraEffects.ShakeOnce(0.8f,1);
+                    soundManager.transform.GetChild(6).GetComponent<AudioSource>().Play();
                     Instantiate(obstacleParticle, targetPos, Quaternion.identity);
 
                     Debug.Log("Obstacle almaya calistin!");

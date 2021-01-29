@@ -10,7 +10,10 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     public CameraFollow camera;
 
-    
+
+    [SerializeField]
+    public GameObject soundManager;
+
 
     [SerializeField]
     public Text shelfText;
@@ -24,6 +27,7 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
+        soundManager = GameObject.Find("SoundController");
         currentShelf = 1;
         shelfCount = shelfs.childCount;
         UpdateText(0);
@@ -37,6 +41,7 @@ public class CameraMovement : MonoBehaviour
             if (!camera.IsLerping())
             {
                 UpdateText(-1);
+                soundManager.transform.GetChild(0).GetComponent<AudioSource>().Play();
                 camera.MoveCamera(-offset, camera.cameraLerpDuration);
             }
             
@@ -50,6 +55,7 @@ public class CameraMovement : MonoBehaviour
             if (!camera.IsLerping())
             {
                 UpdateText(1);
+                soundManager.transform.GetChild(1).GetComponent<AudioSource>().Play();
                 camera.MoveCamera(offset, camera.cameraLerpDuration);
             }
            

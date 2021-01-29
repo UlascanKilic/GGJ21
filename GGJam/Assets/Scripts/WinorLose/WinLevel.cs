@@ -9,6 +9,9 @@ public class WinLevel : MonoBehaviour
     public Transform wonCanvas;
 
     [SerializeField]
+    public GameObject soundManager;
+
+    [SerializeField]
     public Image[] starList;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class WinLevel : MonoBehaviour
     public bool winLevel;
     void Start()
     {
+        soundManager = GameObject.Find("SoundController");
         winLevel = false;
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
@@ -33,7 +37,7 @@ public class WinLevel : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelAt", nextSceneLoad);
         }
-
+        
         Debug.Log("unlocked level : " + nextSceneLoad);
 
 
@@ -67,8 +71,9 @@ public class WinLevel : MonoBehaviour
         
         winLevel = true;
         wonCanvas.gameObject.SetActive(true);
+        soundManager.transform.GetChild(3).GetComponent<AudioSource>().Play();
 
-        
-        
+
+
     }
 }

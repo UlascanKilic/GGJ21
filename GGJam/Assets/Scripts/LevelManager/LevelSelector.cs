@@ -8,13 +8,18 @@ using UnityEngine.EventSystems;
 public class LevelSelector : MonoBehaviour
 {
 
+    [SerializeField]
+    public GameObject soundManager;
+
     public Button[] lvlButtons;
 
     public int dnm;
 
     // Start is called before the first frame update
     void Start()
-    {      
+    {
+        soundManager = GameObject.Find("SoundController");
+
         int levelAt = PlayerPrefs.GetInt("levelAt", 1); /* < Change this int value to whatever your
                                                              level selection build index is on your                                                          build settings */
 
@@ -30,7 +35,14 @@ public class LevelSelector : MonoBehaviour
     }
     public void GetName()
     {
+
+        soundManager.transform.GetChild(0).GetComponent<AudioSource>().Play();
+       
         string name = EventSystem.current.currentSelectedGameObject.name;
         Select(name);
+    }
+    IEnumerator Wait(float duration)
+    {
+        yield return new WaitForSeconds(duration);
     }
 }

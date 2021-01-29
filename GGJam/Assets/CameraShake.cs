@@ -7,14 +7,20 @@ public class CameraShake : MonoBehaviour
    [SerializeField]
    public Camera camera;
 
+
+    
+
     [SerializeField]
     public float duration, strenght, randomness,offset;
     public int vibRatio;
     public bool fadeOut;
 
     private Vector3 linear;
+
+   
     public void DoShake()
     {
+
         camera.DOShakeRotation(duration, strenght, vibRatio, randomness, fadeOut);
     }
     public void RemoveShake()

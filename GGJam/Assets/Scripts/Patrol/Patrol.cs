@@ -19,7 +19,8 @@ public class Patrol : MonoBehaviour
    
     private bool shouldLerp = false;
     void Start()
-    {      
+    {
+        
         StartCoroutine(ChangeStatus(patrolTime));
     }
     void FixedUpdate()
